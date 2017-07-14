@@ -102,7 +102,7 @@ class FormularioViewController : UIViewController, UIImagePickerControllerDelega
     @IBAction func pegaDadosDoFormulario() -> Void {
         
         if (self.contato == nil){
-            self.contato = Contato()
+            self.contato = ContatoDao.sharedInstance().novoContato();
         }
         
         self.contato.nome = self.nome.text!

@@ -17,7 +17,7 @@ class ContatoDao: CoreDataUtil {
     var linhaDestaque:IndexPath?
 
     func adiciona(contato:Contato) -> Void {
-        contatos.append(contato)
+        contatos.append(contato)  
     }
     
     public static func sharedInstance() -> ContatoDao {
@@ -52,7 +52,12 @@ class ContatoDao: CoreDataUtil {
     }
     
     func remove(_ posicao:Int){
+        persistentContainer.viewContext.delete(contatos[posicao])
         contatos.remove(at: posicao);
+    }
+    
+    func novoContato() -> Contato {
+        return NSEntityDescription.insertNewObject(forEntityName: "Contato", into: persistentContainer.viewContext) as! Contato;
     }
 }
 
