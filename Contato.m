@@ -10,6 +10,8 @@
 
 @implementation Contato
 
+@dynamic nome, telefone, endereco, site, latitude, longitude, foto;
+
 -(id)initWithNome:(NSString *)nome_
 {
     self = [super init];
@@ -20,7 +22,8 @@
 }
 
 -(NSString *) description{
-    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Endereço: %@, Site: %@", self.nome, self.telefone, self.endereco, self.site];
+    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Endereço: %@, Site: %@",
+            self.nome, self.telefone, self.endereco, self.site];
 }
 
 -(CLLocationCoordinate2D) coordinate {
