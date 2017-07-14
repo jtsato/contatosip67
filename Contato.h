@@ -21,6 +21,4 @@
 @property (strong) NSNumber* latitude;
 @property (strong) NSNumber* longitude;
 
--(id)initWithNome:(NSString *)nome_;
-
 @end

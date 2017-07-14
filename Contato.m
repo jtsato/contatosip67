@@ -12,15 +12,6 @@
 
 @dynamic nome, telefone, endereco, site, latitude, longitude, foto;
 
--(id)initWithNome:(NSString *)nome_
-{
-    self = [super init];
-    if (self) {
-        self.nome = nome_;
-    }
-    return self;
-}
-
 -(NSString *) description{
     return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Endereço: %@, Site: %@",
             self.nome, self.telefone, self.endereco, self.site];

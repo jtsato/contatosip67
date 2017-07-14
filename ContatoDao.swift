@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContatoDao {
+class ContatoDao: CoreDataUtil {
     
     private var contatos = [Contato]()
     
@@ -23,15 +23,12 @@ class ContatoDao {
     public static func sharedInstance() -> ContatoDao {
         if defaultDAO == nil {
            defaultDAO = ContatoDao()
-           defaultDAO.contatos.append(Contato(nome: "Fulano")!);
-           //defaultDAO.contatos.append(Contato(nome: "Beltrano")!);
-           //defaultDAO.contatos.append(Contato(nome: "Ciclano")!);
         }
         return defaultDAO
     }
     
-    private init(){
-    
+    private override init(){
+        super.init();
     }
     
     public func getContatos() -> [Contato] {
