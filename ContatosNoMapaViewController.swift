@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class ContatosNoMapaViewController: UIViewController {
+class ContatosNoMapaViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapa: MKMapView!
     var contatos: [Contato] = Array()
@@ -48,6 +48,8 @@ class ContatosNoMapaViewController: UIViewController {
             imagemContato.image = contato.foto
             pino.leftCalloutAccessoryView = imagemContato
         }
+        
+        return pino
     }
     
     override func viewDidAppear(_ animated: Bool) {
