@@ -17,30 +17,45 @@ class ContatoDao: CoreDataUtil {
     var linhaDestaque:IndexPath?
 
     func adiciona(contato:Contato) -> Void {
-        contatos.append(contato)  
+        self.contatos.append(contato)
+        self.saveContext();
     }
     
     public static func sharedInstance() -> ContatoDao {
-        if defaultDAO == nil {
-           defaultDAO = ContatoDao()
+        if self.defaultDAO == nil {
+           self.defaultDAO = ContatoDao()
         }
         return defaultDAO
     }
     
     private override init(){
         super.init();
+        self.carregaContatos();
     }
     
     public func getContatos() -> [Contato] {
-        return contatos;
+        return self.contatos;
+    }
+    
+    public func carregaContatos() -> Void {
+        
+        let busca = NSFetchRequest<Contato>(entityName: "Contato")
+        let orderPorNome = NSSortDescriptor(key: "nome", ascending: true)
+        busca.sortDescriptors = [orderPorNome]
+        
+        do {
+            try self.contatos = self.persistentContainer.viewContext.fetch(busca)
+        } catch let error as NSError {
+            print("Fetch falhou: \(error.localizedDescription)");
+        }
     }
     
     public func buscaContatoNaPosicao(_ posicao:Int) -> Contato {
-        return contatos[posicao];
+        return self.contatos[posicao];
     }
     
     func buscaPosicaoDoContato(contato: Contato) -> Int {
-        return contatos.index(of: contato)!;
+        return self.contatos.index(of: contato)!;
     }
     
     func contatoAdicionado(contato: Contato) {
@@ -52,8 +67,10 @@ class ContatoDao: CoreDataUtil {
     }
     
     func remove(_ posicao:Int){
-        persistentContainer.viewContext.delete(contatos[posicao])
-        contatos.remove(at: posicao);
+        self.persistentContainer.viewContext.delete(contatos[posicao])
+        self.contatos.remove(at: posicao)
+        self.saveContext()
+        self.carregaContatos()
     }
     
     func novoContato() -> Contato {

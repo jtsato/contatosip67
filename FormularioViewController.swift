@@ -95,6 +95,7 @@ class FormularioViewController : UIViewController, UIImagePickerControllerDelega
     
     func atualizar(){
         self.pegaDadosDoFormulario()
+        ContatoDao.sharedInstance().saveContext()
         _ = self.delegate?.contatoAdicionado(contato: contato)
         _ = self.navigationController?.popViewController(animated: true);
     }
