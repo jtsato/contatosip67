@@ -24,8 +24,8 @@ class ContatoDao {
         if defaultDAO == nil {
            defaultDAO = ContatoDao()
            defaultDAO.contatos.append(Contato(nome: "Fulano")!);
-           defaultDAO.contatos.append(Contato(nome: "Beltrano")!);
-           defaultDAO.contatos.append(Contato(nome: "Ciclano")!);
+           //defaultDAO.contatos.append(Contato(nome: "Beltrano")!);
+           //defaultDAO.contatos.append(Contato(nome: "Ciclano")!);
         }
         return defaultDAO
     }

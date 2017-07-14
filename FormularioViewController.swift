@@ -115,7 +115,7 @@ class FormularioViewController : UIViewController, UIImagePickerControllerDelega
             self.contato.latitude = latitude as NSNumber
         }
         
-        if let longitude = Double(self.latitude.text!){
+        if let longitude = Double(self.longitude.text!){
             self.contato.longitude = longitude as NSNumber
         }
         

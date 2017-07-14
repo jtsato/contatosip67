@@ -16,8 +16,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dkM-F9-YDG" kind="relationship" relationship="viewControllers" id="6g0-l3-tQB"/>
                         <segue destination="ibg-gd-tVC" kind="relationship" relationship="viewControllers" id="hAq-6a-5uJ"/>
+                        <segue destination="dkM-F9-YDG" kind="relationship" relationship="viewControllers" id="6g0-l3-tQB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcC-Ci-Zkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
