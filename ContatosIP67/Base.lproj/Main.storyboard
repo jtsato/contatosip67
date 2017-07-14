@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j43-PF-BjN" id="TAb-86-cxs">
-                                    <frame key="frameInset" width="375" height="48"/>
+                                    <frame key="frameInset" width="375" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -144,8 +144,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lista-contatos@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-mf-4nL">
-                                <frame key="frameInset" minX="101" minY="109" width="173" height="95"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lista-contatos@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-mf-4nL">
+                                <frame key="frameInset" minX="101" minY="87" width="173" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99835759401321411" green="0.93482504069938865" blue="0.32295296496171533" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>

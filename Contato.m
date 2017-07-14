@@ -28,11 +28,11 @@
 }
 
 -(NSString *) title {
-    return self.title;
+    return self.nome;
 }
 
 -(NSString *) subtitle {
-    return self.subtitle;
+    return self.site;
 }
 
 @end
